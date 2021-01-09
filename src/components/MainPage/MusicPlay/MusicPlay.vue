@@ -69,9 +69,11 @@
 import Card from 'ant-design-vue/lib/card'
 import 'ant-design-vue/lib/card/style/index.css'
 import Progress from 'ant-design-vue/lib/progress'
-import 'ant-design-vue/lib/progress/style/index.css'
+import 'ant-design-vue/lib/progress/style/css'
 import Tooltip from 'ant-design-vue/lib/tooltip'
-import 'ant-design-vue/lib/tooltip/style/index.css'
+import 'ant-design-vue/lib/tooltip/style/css'
+import Message from 'ant-design-vue/lib/message'
+import 'ant-design-vue/lib/message/style/css'
 import {
   SyncOutlined,
   MenuUnfoldOutlined,
@@ -131,7 +133,7 @@ export default {
   watch: {
     // 监听播放音乐的播放时间
     '$store.state.musicPlayItem.currentTime': function (newVal) {
-      console.log('Components -> MainPage.MusicPlay -> watch -> "$store.state.musicPlayItem.currentTime"')
+      // console.log('Components -> MainPage.MusicPlay -> watch -> "$store.state.musicPlayItem.currentTime"')
       this.$nextTick(() => {
         this.player.percent = (newVal / this.$store.state.musicPlayItem.duration * 100).toFixed(0) * 1
         this.player.currentTime = newVal
@@ -328,7 +330,17 @@ export default {
     // 改变播放模式
     ChangePlayMode: function () {
       console.log('Components -> MainPage.MusicPlay -> methods -> ChangePlayMode')
-      this.$store.commit('ChangePlayMode')
+      this.$store.dispatch('CommitChangePlayMode').then(() => {
+        let str = ''
+        // 单曲循环: only, 列表循环: list, 随机播放: random, 顺序播放: order
+        switch (this.$store.state.musicPlayItem.playMode) {
+          case 'only': { str = '单曲循环'; break }
+          case 'list': { str = '列表循环'; break }
+          case 'random': { str = '随机播放'; break }
+          case 'order': { str = '顺序播放'; break }
+        }
+        Message.success(str)
+      })
     },
     // 时间格式转换 - 秒 > 分:秒
     TimeToMinSec: function (sec) {

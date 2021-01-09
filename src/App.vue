@@ -60,7 +60,7 @@ export default {
       this.$store.dispatch('CommitEndPlayMusic')
     },
     MusicTimeUpdate: function () {
-      console.log('App - methods - MusicTimeUpdate')
+      // console.log('App - methods - MusicTimeUpdate')
       const audio = document.getElementById('music-audio')
       this.$store.dispatch('CommitUpdatePlayingMusicTime', { duration: audio.duration, currentTime: audio.currentTime })
     }

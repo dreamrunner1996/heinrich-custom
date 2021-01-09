@@ -53,7 +53,7 @@ const store = createStore({
     },
     // 音乐播放时的最新状态
     UpdatePlayingMusicTime: (state, musicTime) => {
-      console.log('store - mutations - UpdatePlayingMusicTime')
+      // console.log('store - mutations - UpdatePlayingMusicTime')
       state.musicPlayItem.duration = musicTime.duration
       state.musicPlayItem.currentTime = musicTime.currentTime
     },
@@ -94,7 +94,7 @@ const store = createStore({
       context.commit('EndPlayMusic')
     },
     CommitUpdatePlayingMusicTime: (context, musicTime) => {
-      console.log('store - actions - CommitUpdatePlayingMusicTime')
+      // console.log('store - actions - CommitUpdatePlayingMusicTime')
       context.commit('UpdatePlayingMusicTime', musicTime)
     },
     CommitPausePlayingMusic: (context) => {

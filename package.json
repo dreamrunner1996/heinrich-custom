@@ -11,8 +11,6 @@
     "@ant-design/icons-vue": "^5.1.8",
     "ant-design-vue": "^2.0.0-rc.2",
     "core-js": "^3.6.5",
-    "less": "^4.0.0",
-    "less-loader": "^7.2.1",
     "vue": "^3.0.0",
     "vue-router": "^4.0.1",
     "vuex": "^4.0.0-rc.2"
@@ -33,6 +31,8 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^7.0.0-0",
+    "less": "^4.0.0",
+    "less-loader": "^7.2.1",
     "lint-staged": "^9.5.0",
     "save-as": "^0.1.8"
   },
