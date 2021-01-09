@@ -1,0 +1,33 @@
+@keyframes xs-flash {
+    0% { transform: rotate(0deg) }
+    100% { transform: rotate(360deg) }
+}
+
+.file-download-content .main-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.file-download-content .card-title {
+    font-weight: bold;
+    color: #9c9c9c;
+    text-align: left;
+    font-size: 17px;
+}
+.file-download-content .card-content {
+    max-height: 150px;
+    overflow: auto;
+}
+.file-download-content .card-content::-webkit-scrollbar {
+    display: none;
+}
+.file-download-content .card-content .file-title {
+    text-align: left;
+}
+.file-download-content .card-content .file-item {
+    color: #1890ff;
+    width: 100%;
+    text-align: right;
+    margin-top: 2px;
+    cursor: pointer;
+}
