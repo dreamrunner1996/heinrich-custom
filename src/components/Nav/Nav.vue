@@ -32,7 +32,6 @@
                     <div>
                       <span><component :is="item.icon" />{{ item.title }}</span>
                     </div>
-                    <div style="position: absolute; right: 80px"><DownOutlined /></div>
                   </div>
                 </template>
                 <MenuItem v-for="itemA in item.children" :key="itemA.key">
@@ -65,7 +64,6 @@ import MenuItem from 'ant-design-vue/lib/menu/MenuItem'
 import SubMenu from 'ant-design-vue/lib/menu/SubMenu'
 import 'ant-design-vue/lib/menu/style/index.css'
 import {
-  DownOutlined,
   UserOutlined,
   FrownOutlined,
   HighlightOutlined,
@@ -84,7 +82,6 @@ export default {
     Menu,
     MenuItem,
     SubMenu,
-    DownOutlined,
     UserOutlined,
     FrownOutlined,
     HighlightOutlined,

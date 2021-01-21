@@ -1,0 +1,144 @@
+.photo-wall-content {
+    width: 500px;
+}
+
+.photo-wall-content .card-title {
+    font-weight: bold;
+    color: #9c9c9c;
+    text-align: left;
+    font-size: 17px;
+}
+
+.photo-wall-content .card-content {
+    height: 400px;
+}
+.photo-wall-content .card-content .photo-show-button-item {
+    width: 30px;
+    height: 200px;
+    transition: background-color .5s, color .5s;
+    background-color: rgba(222, 222, 222, .1);
+    color: rgba(188, 188, 188, .5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.photo-wall-content .card-content .photo-show-button-item:hover {
+    cursor: pointer;
+    transition: background-color .5s, color .5s;
+    background-color: rgba(188, 188, 188, .2);
+    color: rgba(66, 66, 66, .6);
+}
+
+.photo-wall-content .card-content .photo-show-content {
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.photo-wall-content .card-content .photo-show-content .photo-wall-show-content {
+    height: 300px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.photo-wall-content .card-content .photo-show-content .photo-wall-show-content .photo-wall-show-img-information {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+}
+.photo-wall-content .card-content .photo-show-content .photo-wall-show-content .photo-wall-show-img-information .photo-wall-show-img {
+    width: 150px;
+    height: 150px;
+}
+.photo-wall-content .card-content .photo-show-content .photo-wall-show-content .photo-wall-show-img-information .photo-wall-show-information {
+    width: 230px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.photo-wall-content .card-content .photo-show-content .photo-wall-show-content .photo-wall-show-img-information .photo-wall-show-information .title {
+    height: 24px;
+    line-height: 24px;
+    font-size: 24px;
+    text-align: left;
+    overflow: hidden;
+}
+.photo-wall-content .card-content .photo-show-content .photo-wall-show-content .photo-wall-show-img-information .photo-wall-show-information .description {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: left;
+    max-height: 40px;
+    overflow: auto;
+}
+.photo-wall-content .card-content .photo-show-content .photo-wall-show-content .photo-wall-show-img-information .photo-wall-show-information .description::-webkit-scrollbar {
+    display: none;
+}
+.photo-wall-content .card-content .photo-show-content .photo-wall-show-content .photo-wall-show-img-information .photo-wall-show-information .divider {
+    height: 1px;
+    width: 100%;
+    background-color: #cecece;
+    margin: 5px 0;
+}
+.photo-wall-content .card-content .photo-show-content .photo-wall-show-content .photo-wall-show-img-information .photo-wall-show-information .author-time {
+    width: 100%;
+    text-align: right;
+}
+.photo-wall-content .card-content .photo-show-content .photo-wall-show-content .photo-wall-show-img-information .photo-wall-show-information .author-time .author {
+    width: 100%;
+    height: 16px;
+    line-height: 16px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.photo-wall-content .card-content .photo-show-content .photo-wall-show-content .photo-wall-show-img-information .photo-wall-show-information .author-time .time {
+    width: 100%;
+    margin-top: 3px;
+    height: 14px;
+    line-height: 14px;
+    font-size: 14px;
+}
+.photo-wall-content .card-content .photo-show-content .photo-wall-show-content .photo-wall-show-img-information .photo-wall-show-information .features-list {
+    margin-top: 40px;
+    height: 14px;
+    font-size: 14px;
+    width: 100%;
+    color: #1890FF;
+    line-height: 14px;
+    display: flex;
+    flex-direction: row;
+}
+.photo-wall-content .card-content .photo-show-content .photo-wall-show-content .photo-wall-show-img-information .photo-wall-show-information .features-list .features-item {
+    cursor: pointer;
+    margin-right: 25px;
+}
+
+.photo-wall-content .card-content .divider {
+    width: 100%;
+    height: 1px;
+    margin: 5px 0;
+    background-color: #dedede;
+}
+
+.photo-wall-content .card-content .photo-file-content {
+    display: flex;
+    flex-direction: column;
+}
+.photo-wall-content .card-content .photo-file-content .title {
+    color: #8a8a8a;
+    text-align: left;
+    font-size: 18px;
+}
+.photo-wall-content .card-content .photo-file-content .content {
+    height: 162px;
+    overflow: auto;
+}
+.photo-wall-content .card-content .photo-file-content .content::-webkit-scrollbar {
+    display: none;
+}
