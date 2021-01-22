@@ -18,7 +18,8 @@ const store = createStore({
     },
     musicPlayName: '无',
     photoList: '/photoList',
-    photoFile: '/photo'
+    photoFile: '/photo',
+    photoInformation: '/photoInformation'
   },
   getters: {
     serverUrl: state => `${state.url}:${state.port}`,
@@ -27,7 +28,8 @@ const store = createStore({
     musicListUrl: state => `${state.url}:${state.port}${state.musicList}`,
     musicPlayUrl: state => `${state.url}:${state.port}${state.musicPlay}`,
     photoListUrl: state => `${state.url}:${state.port}${state.photoList}`,
-    photoShowUrl: state => `${state.url}:${state.port}${state.photoFile}`
+    photoShowUrl: state => `${state.url}:${state.port}${state.photoFile}`,
+    photoInformationUrl: state => `${state.url}:${state.port}${state.photoInformation}`
   },
   mutations: {
     // 更新 播放音乐状态

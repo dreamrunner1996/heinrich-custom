@@ -60,7 +60,6 @@
     height: 150px;
     display: flex;
     flex-direction: column;
-    align-items: start;
 }
 .photo-wall-content .card-content .photo-show-content .photo-wall-show-content .photo-wall-show-img-information .photo-wall-show-information .title {
     height: 24px;
@@ -141,4 +140,60 @@
 }
 .photo-wall-content .card-content .photo-file-content .content::-webkit-scrollbar {
     display: none;
+}
+.photo-wall-content .card-content .photo-file-content .content .content-item {
+    height: 140px;
+}
+.photo-wall-content .card-content .photo-file-content .content .content-item .photo-list-item-title {
+    text-align: right;
+    height: 20px;
+    line-height: 20px;
+    font-size: 18px;
+}
+.photo-wall-content .card-content .photo-file-content .content .content-item .photo-list-item-content {
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    line-height: 100px;
+}
+.photo-wall-content .card-content .photo-file-content .content .content-item .photo-list-item-content .photo-list-item-list {
+    width: 100px;
+}
+.photo-wall-content .card-content .photo-file-content .content .content-item .photo-list-item-content .photo-list-item-list * {
+    cursor: pointer;
+}
+.photo-wall-content .card-content .photo-file-content .content .content-item .photo-list-item-content .photo-list-item-list img {
+    height: 80px;
+    width: 80px;
+}
+.photo-wall-content .card-content .photo-file-content .content .content-item .photo-list-item-content .photo-list-item-list .img-name {
+    height: 15px;
+    margin: auto;
+    width: 80px;
+    line-height: 15px;
+    overflow-x: hidden;
+    word-break: keep-all;
+}
+.photo-wall-content .card-content .photo-file-content .content .content-item .photo-list-item-content .photo-list-item-list .img-name span {
+    width: auto;
+    white-space: nowrap;
+}
+
+.photo-wall-big-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.photo-wall-big-content img {
+    width: 40vw;
+    min-width: 800px;
+    height: 40vw;
+    min-height: 800px;
 }
