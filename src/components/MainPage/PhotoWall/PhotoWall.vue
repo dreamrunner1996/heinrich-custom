@@ -243,10 +243,40 @@ export default {
     // 切换上一张图片
     PhotoListPrev: function () {
       console.log('Components -> MainPage.PhotoWall -> methods -> PhotoListPrev')
+      if (this.imgList.length && (this.imgShow.id !== undefined)) {
+        let beLongPath = ''
+        this.imgList.forEach(imgListItem => {
+          if (imgListItem.list && imgListItem.list instanceof Array && imgListItem.list.length) {
+            imgListItem.list.forEach(imgListItemListRes => {
+              if (imgListItemListRes.id === this.imgShow.id) beLongPath = imgListItem.pathName
+            })
+          }
+        })
+        const beLongList = this.imgList.find(imgListItem => { return imgListItem.pathName === beLongPath }).list
+        let showImgId = this.imgShow.id - 1
+        if (showImgId < beLongList[0].id) showImgId = beLongList[beLongList.length - 1].id
+        this.imgShow = beLongList.find(beLongListItem => { return beLongListItem.id === showImgId })
+        this.ClickPhoto(this.imgShow)
+      }
     },
     // 切换下一张图片
     PhotoListNext: function () {
       console.log('Components -> MainPage.PhotoWall -> methods -> PhotoListNext')
+      if (this.imgList.length && (this.imgShow.id !== undefined)) {
+        let beLongPath = ''
+        this.imgList.forEach(imgListItem => {
+          if (imgListItem.list && imgListItem.list instanceof Array && imgListItem.list.length) {
+            imgListItem.list.forEach(imgListItemListRes => {
+              if (imgListItemListRes.id === this.imgShow.id) beLongPath = imgListItem.pathName
+            })
+          }
+        })
+        const beLongList = this.imgList.find(imgListItem => { return imgListItem.pathName === beLongPath }).list
+        let showImgId = this.imgShow.id + 1
+        if (showImgId > beLongList[beLongList.length - 1].id) showImgId = beLongList[0].id
+        this.imgShow = beLongList.find(beLongListItem => { return beLongListItem.id === showImgId })
+        this.ClickPhoto(this.imgShow)
+      }
     },
     // 点击查看大图
     ShowBigPhoto: function (photoItem) {
