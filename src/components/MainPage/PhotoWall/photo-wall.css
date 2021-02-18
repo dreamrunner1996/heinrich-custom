@@ -1,3 +1,11 @@
+@keyframes big-img-show {
+    0% { width: 0; }
+    40% { width: 50vw; }
+    60% { width: 35vw; }
+    80% { width: 42vw; }
+    100% { width: 40vw; }
+}
+
 .photo-wall-content {
     width: 500px;
 }
@@ -51,9 +59,15 @@
     width: 100%;
     height: 200px;
 }
-.photo-wall-content .card-content .photo-show-content .photo-wall-show-content .photo-wall-show-img-information .photo-wall-show-img {
+.photo-wall-content .card-content .photo-show-content .photo-wall-show-content .photo-wall-show-img-information .photo-wall-show-img-mb {
     width: 150px;
     height: 150px;
+    background-color: black;
+    line-height: 150px;
+}
+.photo-wall-content .card-content .photo-show-content .photo-wall-show-content .photo-wall-show-img-information .photo-wall-show-img-mb .photo-wall-show-img {
+    width: 150px;
+    /*height: 150px;*/
 }
 .photo-wall-content .card-content .photo-show-content .photo-wall-show-content .photo-wall-show-img-information .photo-wall-show-information {
     width: 230px;
@@ -162,15 +176,22 @@
 .photo-wall-content .card-content .photo-file-content .content .content-item .photo-list-item-content .photo-list-item-list * {
     cursor: pointer;
 }
-.photo-wall-content .card-content .photo-file-content .content .content-item .photo-list-item-content .photo-list-item-list img {
+.photo-wall-content .card-content .photo-file-content .content .content-item .photo-list-item-content .photo-list-item-list .photo-list-item-list-item-mb {
     height: 80px;
+    width: 80px;
+    background-color: black;
+    line-height: 80px;
+    margin: auto;
+}
+.photo-wall-content .card-content .photo-file-content .content .content-item .photo-list-item-content .photo-list-item-list .photo-list-item-list-item-mb img {
+    /*height: 80px;*/
     width: 80px;
 }
 .photo-wall-content .card-content .photo-file-content .content .content-item .photo-list-item-content .photo-list-item-list .img-name {
-    height: 15px;
+    height: 20px;
     margin: auto;
     width: 80px;
-    line-height: 15px;
+    line-height: 20px;
     overflow-x: hidden;
     word-break: keep-all;
 }
@@ -178,8 +199,12 @@
     width: auto;
     white-space: nowrap;
 }
+.photo-wall-content .card-content .photo-file-content .content .content-item {
+    height: 140px;
+}
 
 .photo-wall-big-content {
+    z-index: 100;
     position: absolute;
     top: 0;
     left: 0;
@@ -192,8 +217,6 @@
     align-items: center;
 }
 .photo-wall-big-content img {
+    animation: big-img-show 1s linear;
     width: 40vw;
-    min-width: 800px;
-    height: 40vw;
-    min-height: 800px;
 }

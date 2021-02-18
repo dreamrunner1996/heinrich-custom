@@ -2,7 +2,7 @@ import { createStore } from 'vuex'
 
 const store = createStore({
   state: {
-    url: 'http://localhost',
+    url: 'http://172.16.1.245',
     port: '1144',
     fileList: '/fileList',
     download: '/download',

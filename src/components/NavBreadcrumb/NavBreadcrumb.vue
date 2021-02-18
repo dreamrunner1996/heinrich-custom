@@ -11,7 +11,7 @@
 
 <script>
 import Breadcrumb from 'ant-design-vue/lib/breadcrumb'
-import BreadcrumbItem from 'ant-design-vue/lib/breadcrumb/BreadcrumbItem'
+// import BreadcrumbItem from 'ant-design-vue/lib/breadcrumb/BreadcrumbItem'
 import 'ant-design-vue/lib/breadcrumb/style/index.css'
 import './nav-breadcrumb.css'
 import {
@@ -22,6 +22,7 @@ import {
   WindowsOutlined
 } from '@ant-design/icons-vue'
 import navContent from '@/router/nav.js'
+const BreadcrumbItem = Breadcrumb.Item
 
 export default {
   name: 'NavBreadcrumb',
@@ -42,7 +43,7 @@ export default {
     showNav: []
   }),
   watch: {
-    routeNav: function (newVal, oldVal) {
+    routeNav: function (newVal) {
       this.showNav = []
       this.navContent.routeNav.forEach(res => {
         if (res.children) {

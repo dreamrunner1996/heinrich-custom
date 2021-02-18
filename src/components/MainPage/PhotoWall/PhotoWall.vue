@@ -16,7 +16,9 @@
         <div class="photo-show-button-item" @click="PhotoListPrev"><LeftOutlined /></div>
         <div class="photo-wall-show-content">
           <div class="photo-wall-show-img-information">
-            <img class="photo-wall-show-img" :src="imgShow.url" alt="#" />
+            <div class="photo-wall-show-img-mb">
+              <img class="photo-wall-show-img" :src="imgShow.url" alt="#" />
+            </div>
             <div class="photo-wall-show-information">
               <div class="title">{{ imgShow.title ? imgShow.title : imgShow.name }}&nbsp;</div>
               <div class="description">{{ imgShow.description ? imgShow.description : '没有描述' }}&nbsp;</div>
@@ -46,7 +48,9 @@
                    @mouseenter="CheckPhoto(imgItem.id)"
                    @mouseleave="LeaveCheck(imgItem.id)"
                    @click="ClickPhoto(imgItem)">
-                <img :src="imgItem.url" alt="#" />
+                <div class="photo-list-item-list-item-mb">
+                  <img :src="imgItem.url" alt="#" />
+                </div>
                 <div :id="'photo-item-name-content-' + imgItem.id" class="img-name">
                   <span :style="styleList.hoverImg[imgItem.id]" :id="'photo-item-' + imgItem.id">{{ imgItem.name }}</span>
                 </div>

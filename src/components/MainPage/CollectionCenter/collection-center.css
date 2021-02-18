@@ -1,0 +1,10 @@
+.collection-center-content {
+    margin-top: 5px;
+    width: 300px;
+}
+.collection-center-content .card-title {
+    font-weight: bold;
+    color: #9c9c9c;
+    text-align: left;
+    font-size: 17px;
+}

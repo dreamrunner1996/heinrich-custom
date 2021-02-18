@@ -7,7 +7,11 @@
     <div style="margin-left: 10px">
       <PhotoWall />
     </div>
-    <LifeCalendar />
+    <div style="margin-left: 10px">
+      <LifeCalendar />
+      <CollectionCenter />
+      <LifeDiary />
+    </div>
   </div>
 </template>
 
@@ -16,12 +20,14 @@ import FileDownload from '@/components/MainPage/FileDownload/FileDownload'
 import LifeCalendar from '@/components/MainPage/LifeCalendar/LifeCalendar'
 import MusicPlay from '@/components/MainPage/MusicPlay/MusicPlay'
 import PhotoWall from '@/components/MainPage/PhotoWall/PhotoWall'
+import CollectionCenter from '@/components/MainPage/CollectionCenter/CollectionCenter'
+import LifeDiary from '@/components/MainPage/LifeDiary/LifeDiary'
 
 import './main.css'
 
 export default {
   name: 'Main',
-  components: { FileDownload, LifeCalendar, MusicPlay, PhotoWall },
+  components: { FileDownload, LifeCalendar, MusicPlay, PhotoWall, CollectionCenter, LifeDiary },
   data: () => ({}),
   emits: ['get-play-music'],
   mounted () {},
