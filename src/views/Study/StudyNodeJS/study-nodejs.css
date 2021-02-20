@@ -1,43 +1,43 @@
-.study-css-content {}
+.study-node-js-content {}
 
-.study-css-content .title {
+.study-node-js-content .title {
     text-align: left;
     font-size: 30px;
     color: #8a8a8a;
 }
 
-.study-css-content .divider {
+.study-node-js-content .divider {
     height: 1px;
     background-color: #dadada;
 }
 
-.study-css-content .context {
+.study-node-js-content .context {
     margin-top: 10px;
 }
 
-.css-item-title {
+.node-js-item-title {
     font-size: 24px;
     color: #686868;
     line-height: 24px;
 }
-.css-item-description {
+.node-js-item-description {
     font-size: 16px;
     color: #8a8a8a;
     line-height: 16px;
     margin-top: 8px;
 }
-.css-item-content .css-item-context {
+.node-js-item-content .node-js-item-context {
     font-size: 18px;
     color: #6a6a6a;
     text-align: left;
 }
-.css-item-content .css-item-url {
+.node-js-item-content .node-js-item-url {
     font-style: oblique;
     text-decoration: underline;
     color: #1890FF;
     text-align: right;
 }
-.css-item-content .css-item-url span {
+.node-js-item-content .node-js-item-url span {
     cursor: pointer;
 }
 

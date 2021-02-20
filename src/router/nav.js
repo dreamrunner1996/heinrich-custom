@@ -29,6 +29,38 @@ const routeNav = [
         key: 'study-css',
         title: 'Css',
         icon: 'WindowsOutlined'
+      },
+      {
+        key: 'study-vue',
+        title: 'Vue',
+        icon: 'BookOutlined'
+      },
+      {
+        key: 'study-electron',
+        title: 'Electron',
+        icon: 'BookOutlined'
+      },
+      {
+        key: 'study-node-js',
+        title: 'NodeJS',
+        icon: 'BookOutlined'
+      }
+    ]
+  },
+  {
+    key: 'other',
+    title: '其它知识',
+    icon: 'CodepenOutlined',
+    children: [
+      {
+        key: 'other-piano',
+        title: 'Piano',
+        icon: 'UngroupOutlined'
+      },
+      {
+        key: 'other-invest',
+        title: 'Invest',
+        icon: 'AccountBookOutlined'
       }
     ]
   }

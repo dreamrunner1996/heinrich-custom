@@ -1,3 +1,65 @@
-.study-html-content {
+.study-html-content {}
 
+.study-html-content .title {
+    text-align: left;
+    font-size: 30px;
+    color: #8a8a8a;
+}
+
+.study-html-content .divider {
+    height: 1px;
+    background-color: #dadada;
+}
+
+.study-html-content .context {
+    margin-top: 10px;
+}
+
+.html-item-title {
+    font-size: 24px;
+    color: #686868;
+    line-height: 24px;
+}
+.html-item-description {
+    font-size: 16px;
+    color: #8a8a8a;
+    line-height: 16px;
+    margin-top: 8px;
+}
+.html-item-content .html-item-context {
+    font-size: 18px;
+    color: #6a6a6a;
+    text-align: left;
+}
+.html-item-content .html-item-url {
+    font-style: oblique;
+    text-decoration: underline;
+    color: #1890FF;
+    text-align: right;
+}
+.html-item-content .html-item-url span {
+    cursor: pointer;
+}
+
+.url-iframe-content {
+    z-index: 100;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.url-iframe-content .iframe-context {
+    width: 1366px;
+    height: 768px;
+}
+.url-iframe-content .iframe-context iframe {
+    width: 1366px;
+    height: 768px;
+    background-color: white;
 }

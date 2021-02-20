@@ -69,7 +69,10 @@ import {
   HighlightOutlined,
   Html5Outlined,
   ReadOutlined,
-  WindowsOutlined
+  WindowsOutlined,
+  CodepenOutlined,
+  UngroupOutlined,
+  AccountBookOutlined
 } from '@ant-design/icons-vue'
 import navContent from '@/router/nav'
 
@@ -87,7 +90,10 @@ export default {
     HighlightOutlined,
     Html5Outlined,
     ReadOutlined,
-    WindowsOutlined
+    WindowsOutlined,
+    CodepenOutlined,
+    UngroupOutlined,
+    AccountBookOutlined
   },
   props: {
     routeNav: { required: true, type: String }

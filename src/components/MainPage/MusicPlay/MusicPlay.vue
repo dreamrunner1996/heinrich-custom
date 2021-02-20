@@ -149,7 +149,7 @@ export default {
         // 如果歌曲已经播放完毕
         if (newVal === 'end') {
           // 单曲循环: only, 列表循环: list, 随机播放: random, 顺序播放: order
-          let musicIndex = 0
+          let musicIndex
           const nowMusic = this.musicList.find(musicRes => {
             return musicRes.name === this.$store.state.musicPlayItem.musicName
           })

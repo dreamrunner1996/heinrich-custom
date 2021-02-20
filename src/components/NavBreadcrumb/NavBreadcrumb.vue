@@ -17,9 +17,13 @@ import './nav-breadcrumb.css'
 import {
   UserOutlined,
   FrownOutlined,
-  ReadOutlined,
+  HighlightOutlined,
   Html5Outlined,
-  WindowsOutlined
+  ReadOutlined,
+  WindowsOutlined,
+  CodepenOutlined,
+  UngroupOutlined,
+  AccountBookOutlined
 } from '@ant-design/icons-vue'
 import navContent from '@/router/nav.js'
 const BreadcrumbItem = Breadcrumb.Item
@@ -31,9 +35,13 @@ export default {
     BreadcrumbItem,
     UserOutlined,
     FrownOutlined,
+    HighlightOutlined,
     Html5Outlined,
     ReadOutlined,
-    WindowsOutlined
+    WindowsOutlined,
+    CodepenOutlined,
+    UngroupOutlined,
+    AccountBookOutlined
   },
   props: {
     routeNav: { required: true, type: String }

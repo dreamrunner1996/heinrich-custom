@@ -1,43 +1,43 @@
-.study-css-content {}
+.study-vue-content {}
 
-.study-css-content .title {
+.study-vue-content .title {
     text-align: left;
     font-size: 30px;
     color: #8a8a8a;
 }
 
-.study-css-content .divider {
+.study-vue-content .divider {
     height: 1px;
     background-color: #dadada;
 }
 
-.study-css-content .context {
+.study-vue-content .context {
     margin-top: 10px;
 }
 
-.css-item-title {
+.vue-item-title {
     font-size: 24px;
     color: #686868;
     line-height: 24px;
 }
-.css-item-description {
+.vue-item-description {
     font-size: 16px;
     color: #8a8a8a;
     line-height: 16px;
     margin-top: 8px;
 }
-.css-item-content .css-item-context {
+.vue-item-content .vue-item-context {
     font-size: 18px;
     color: #6a6a6a;
     text-align: left;
 }
-.css-item-content .css-item-url {
+.vue-item-content .vue-item-url {
     font-style: oblique;
     text-decoration: underline;
     color: #1890FF;
     text-align: right;
 }
-.css-item-content .css-item-url span {
+.vue-item-content .vue-item-url span {
     cursor: pointer;
 }
 

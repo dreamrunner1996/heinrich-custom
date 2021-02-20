@@ -1,3 +1,12 @@
 .study-content {
-
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-width: 1620px;
+}
+.study-content .context {
+    width: 1300px;
+}
+.study-content .other-components {
+    width: 300px;
 }

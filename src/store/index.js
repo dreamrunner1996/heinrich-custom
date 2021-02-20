@@ -2,7 +2,8 @@ import { createStore } from 'vuex'
 
 const store = createStore({
   state: {
-    url: 'http://172.16.1.245',
+    // url: 'http://172.16.1.245',
+    url: 'http://localhost',
     port: '1144',
     fileList: '/fileList',
     download: '/download',
@@ -19,7 +20,14 @@ const store = createStore({
     musicPlayName: '无',
     photoList: '/photoList',
     photoFile: '/photo',
-    photoInformation: '/photoInformation'
+    photoInformation: '/photoInformation',
+    study: {
+      getHtml: '/studyHtml',
+      getCss: '/studyCss',
+      getVue: '/studyVue',
+      getElectron: '/studyElectron',
+      getNodeJS: '/studyNodeJS'
+    }
   },
   getters: {
     serverUrl: state => `${state.url}:${state.port}`,
@@ -29,7 +37,12 @@ const store = createStore({
     musicPlayUrl: state => `${state.url}:${state.port}${state.musicPlay}`,
     photoListUrl: state => `${state.url}:${state.port}${state.photoList}`,
     photoShowUrl: state => `${state.url}:${state.port}${state.photoFile}`,
-    photoInformationUrl: state => `${state.url}:${state.port}${state.photoInformation}`
+    photoInformationUrl: state => `${state.url}:${state.port}${state.photoInformation}`,
+    getHtmlUrl: state => `${state.url}:${state.port}${state.study.getHtml}`,
+    getCssUrl: state => `${state.url}:${state.port}${state.study.getCss}`,
+    getVueUrl: state => `${state.url}:${state.port}${state.study.getVue}`,
+    getElectronUrl: state => `${state.url}:${state.port}${state.study.getElectron}`,
+    getNodeJSUrl: state => `${state.url}:${state.port}${state.study.getNodeJS}`
   },
   mutations: {
     // 更新 播放音乐状态

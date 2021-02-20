@@ -60,7 +60,10 @@ html, body {
 }
 .app-content .page-content .page-dashboard {
     padding: 10px;
-    overflow: hidden;
+    overflow: auto;
     height: calc(100% - 60px);
     background-color: #ffffff;
+}
+.app-content .page-content .page-dashboard::-webkit-scrollbar {
+    display: none;
 }

@@ -1,29 +1,39 @@
 <template>
   <div class="nav-music-content">
-    <Button type="link" style="display: flex; flex-direction: row; line-height: 32px; color: coral">
-      <div style="margin-right: 15px"><CustomerServiceOutlined /> 正在播放</div>
-      <div id="music-name-content" style="width: 140px; overflow-x: hidden; word-break: keep-all; text-align: right">
-        <span id="music-name" style="width: auto;">{{ $store.state.musicPlayItem.name }}</span>
-      </div>
-    </Button>
+    <Popover>
+      <template #title> </template>
+      <template #content>
+        <MusicPlay @play-music="GetPlayMusic" />
+      </template>
+      <Button type="link" style="display: flex; flex-direction: row; line-height: 32px; color: coral">
+        <div style="margin-right: 15px"><CustomerServiceOutlined /> 正在播放</div>
+        <div id="music-name-content" style="width: 140px; overflow-x: hidden; word-break: keep-all; text-align: right">
+          <span id="music-name" style="width: auto;">{{ $store.state.musicPlayItem.name }}</span>
+        </div>
+      </Button>
+    </Popover>
   </div>
 </template>
 
 <script>
 import Button from 'ant-design-vue/lib/button'
 import 'ant-design-vue/lib/button/style/index.css'
+import Popover from 'ant-design-vue/lib/popover'
+import 'ant-design-vue/lib/popover/style/index.css'
 import { CustomerServiceOutlined } from '@ant-design/icons-vue'
+import MusicPlay from '@/components/MainPage/MusicPlay/MusicPlay'
 import './nav-music.css'
 
 export default {
   name: 'NavMusic',
-  components: { Button, CustomerServiceOutlined },
+  components: { Button, CustomerServiceOutlined, MusicPlay, Popover },
   data: () => ({
     musicTitle: '无',
     intervalList: {
       musicInt: null
     }
   }),
+  emits: ['get-play-music'],
   watch: {
     '$store.state.musicPlayItem.name': function (newVal) {
       this.musicTitle = newVal
@@ -83,6 +93,15 @@ export default {
           this.intervalList.musicInt = null
         }
       }
+    },
+    GetPlayMusic: function (musicItem) {
+      console.log('views - Main - methods - GetPlayMusic')
+      this.$emit('get-play-music', musicItem)
+      this.$store.dispatch('CommitUpdatePlayMusic', musicItem).then(() => {
+        console.log(this.$store.state.musicPlayItem)
+        console.log('finish')
+      })
+      console.warn(musicItem)
     }
   }
 }
