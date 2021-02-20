@@ -27,6 +27,8 @@ export default {
   name: 'Main',
   components: { FileDownload, LifeCalendar, PhotoWall, CollectionCenter, LifeDiary },
   data: () => ({}),
-  mounted () {}
+  mounted: function () {
+    console.log('Views -> Other -> mounted')
+  }
 }
 </script>

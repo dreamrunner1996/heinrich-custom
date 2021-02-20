@@ -46,10 +46,12 @@ export default {
     iframeSrc: ''
   }),
   mounted: function () {
+    console.log('Views -> Study.StudyElectron -> mounted')
     this.GetStudyElectron()
   },
   methods: {
     GetStudyElectron: async function () {
+      console.log('Views -> Study.StudyElectron -> methods -> GetStudyElectron')
       this.studyElectronList = []
       await Axios.get(this.$store.getters.getElectronUrl).then(res => {
         const resData = res.data

@@ -10,6 +10,8 @@ import StudyNodeJS from '@/views/Study/StudyNodeJS/StudyNodeJS'
 import Other from '@/views/Other/Other'
 import OtherInvest from '@/views/Other/OtherInvest/OtherInvest'
 import OtherPiano from '@/views/Other/OtherPiano/OtherPiano'
+import Dashboard from '@/views/Dashboard/Dashboard'
+// import DashboardIndex from '@/views/Dashboard/DashboardIndex/DashboardIndex'
 
 const route = createRouter({
   history: createWebHashHistory(),
@@ -37,6 +39,11 @@ const route = createRouter({
         { path: 'other-piano', component: OtherPiano, name: 'other-piano' },
         { path: 'other-invest', component: OtherInvest, name: 'other-invest' }
       ]
+    },
+    {
+      path: '/dashboard',
+      component: Dashboard,
+      name: 'dashboard'
     }
   ]
 })

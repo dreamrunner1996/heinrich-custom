@@ -36,9 +36,11 @@ export default {
   emits: ['get-play-music'],
   watch: {
     '$store.state.musicPlayItem.name': function (newVal) {
+      console.log('Components -> NavMusic -> watch -> `$store.state.musicPlayItem.name`')
       this.musicTitle = newVal
     },
     musicTitle: function () {
+      console.log('Components -> NavMusic -> watch -> musicTitle')
       this.$nextTick(() => {
         this.CheckMusic()
       })
@@ -46,6 +48,7 @@ export default {
   },
   methods: {
     CheckMusic: function () {
+      console.log('Components -> NavMusic -> methods -> CheckMusic')
       const musicContentDom = document.getElementById('music-name-content')
       const musicTitleDom = document.getElementById('music-name')
       // 如果 容器宽度 < 内容宽度  左右晃动
@@ -95,13 +98,9 @@ export default {
       }
     },
     GetPlayMusic: function (musicItem) {
-      console.log('views - Main - methods - GetPlayMusic')
+      console.log('Components -> NavMusic -> methods -> GetPlayMusic')
       this.$emit('get-play-music', musicItem)
-      this.$store.dispatch('CommitUpdatePlayMusic', musicItem).then(() => {
-        console.log(this.$store.state.musicPlayItem)
-        console.log('finish')
-      })
-      console.warn(musicItem)
+      this.$store.dispatch('CommitUpdatePlayMusic', musicItem)
     }
   }
 }

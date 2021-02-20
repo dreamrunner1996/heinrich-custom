@@ -128,12 +128,13 @@ export default {
   }),
   emits: ['play-music'],
   mounted () {
+    console.log('Components -> MainPage.MusicPlay -> mounted')
     this.GetMusicList()
   },
   watch: {
     // 监听播放音乐的播放时间
     '$store.state.musicPlayItem.currentTime': function (newVal) {
-      // console.log('Components -> MainPage.MusicPlay -> watch -> "$store.state.musicPlayItem.currentTime"')
+      console.log('Components -> MainPage.MusicPlay -> watch -> `$store.state.musicPlayItem.currentTime`')
       this.$nextTick(() => {
         this.player.percent = (newVal / this.$store.state.musicPlayItem.duration * 100).toFixed(0) * 1
         this.player.currentTime = newVal
@@ -142,8 +143,7 @@ export default {
     },
     // 监听播放音乐结束时候情况
     '$store.state.musicPlayItem.status': function (newVal) {
-      console.log('Components -> MainPage.MusicPlay -> watch -> "$store.state.musicPlayItem.status"')
-      console.log(newVal)
+      console.log('Components -> MainPage.MusicPlay -> watch -> `$store.state.musicPlayItem.status`')
       // 刷新音乐列表
       this.GetMusicList().then(() => {
         // 如果歌曲已经播放完毕
@@ -155,7 +155,6 @@ export default {
           })
           if (nowMusic) musicIndex = nowMusic.id - 1
           else musicIndex = 0
-          console.error(this.$store.state.musicPlayItem.playMode)
           switch (this.$store.state.musicPlayItem.playMode) {
             case 'only': {
               this.PlayMusic(this.musicList[musicIndex])
@@ -172,7 +171,6 @@ export default {
               break
             }
             case 'order': {
-              console.warn(this.musicList[musicIndex + 1])
               if ((musicIndex + 1) > this.musicList.length) this.StopMusic()
               else this.PlayMusic(this.musicList[musicIndex + 1])
               break
@@ -191,7 +189,6 @@ export default {
     // 取消内容超过容器左右晃动效果，并把它恢复默认
     LeaveCheck: function (id) {
       console.log('Components -> MainPage.MusicPlay -> methods -> LeaveCheck')
-      console.log('leave')
       const musicContentDom = document.getElementById('music-item-name-content-' + id)
       musicContentDom.scrollLeft = 0
       if (this.intervalList.musicCheckInt) {
@@ -253,9 +250,7 @@ export default {
     // 音乐列表刷新 - 动画
     FlashMusicList: function () {
       console.log('Components -> MainPage.MusicPlay -> methods -> FlashMusicList')
-      this.styleList.flash = {
-        animation: 'xs-flash 1s linear'
-      }
+      this.styleList.flash = { animation: 'xs-flash 1s linear' }
       this.GetMusicList()
       window.setTimeout(() => {
         this.styleList.flash = {}
@@ -272,7 +267,6 @@ export default {
             this.musicList.push({ id: musicIndex + 1, url: `${musicRes.path}${musicRes.filename}`, name: musicRes.filename })
           })
         }
-        console.log(this.musicList)
       })
     },
     // 上一曲
@@ -296,7 +290,6 @@ export default {
     PlayMusic: function (music) {
       console.log('Components -> MainPage.MusicPlay -> methods -> PlayMusic')
       this.$emit('play-music', music)
-      console.error(music)
       const musicUrl = `${this.$store.getters.musicPlayUrl}/${music.name}`
       const audio = document.getElementById('music-audio')
       audio.src = musicUrl
@@ -326,7 +319,9 @@ export default {
       }
     },
     // 停止音乐
-    StopMusic: function () {},
+    StopMusic: function () {
+      console.log('Components -> MainPage.MusicPlay -> methods -> StopMusic')
+    },
     // 改变播放模式
     ChangePlayMode: function () {
       console.log('Components -> MainPage.MusicPlay -> methods -> ChangePlayMode')
@@ -344,6 +339,7 @@ export default {
     },
     // 时间格式转换 - 秒 > 分:秒
     TimeToMinSec: function (sec) {
+      console.log('Components -> MainPage.MusicPlay -> methods -> TimeToMinSec')
       let minute = '00'
       let second = '00'
       if (sec !== 0 && sec > 0) {

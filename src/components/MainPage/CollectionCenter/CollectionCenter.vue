@@ -21,7 +21,6 @@ import Tooltip from 'ant-design-vue/lib/tooltip/Tooltip'
 import 'ant-design-vue/lib/tooltip/style/index.css'
 import { SyncOutlined } from '@ant-design/icons-vue'
 import './collection-center.css'
-import Axios from 'axios'
 
 export default {
   name: 'CollectionCenter',
@@ -32,14 +31,13 @@ export default {
     }
   }),
   mounted () {
+    console.log('Components -> MainPage.CollectionCenter -> mounted')
     this.GetCollectionCenter()
   },
   methods: {
     FlashCollectionCenter: function () {
       console.log('Components -> MainPage.CollectionCenter -> methods -> CollectionCenter')
-      this.styleList.flash = {
-        animation: 'xs-flash 1s linear'
-      }
+      this.styleList.flash = { animation: 'xs-flash 1s linear' }
       this.GetCollectionCenter()
       window.setTimeout(() => {
         this.styleList.flash = {}
@@ -48,16 +46,6 @@ export default {
     // 获取收藏中心列表
     GetCollectionCenter: async function () {
       console.log('Components -> MainPage.CollectionCenter -> methods -> GetCollectionCenter')
-      this.musicList = []
-      await Axios.get(this.$store.getters.musicListUrl).then(res => {
-        const musicListArr = JSON.parse(JSON.stringify(res.data))
-        if (musicListArr && musicListArr instanceof Array && musicListArr.length) {
-          musicListArr.forEach((musicRes, musicIndex) => {
-            this.musicList.push({ id: musicIndex + 1, url: `${musicRes.path}${musicRes.filename}`, name: musicRes.filename })
-          })
-        }
-        console.log(this.musicList)
-      })
     }
   }
 }

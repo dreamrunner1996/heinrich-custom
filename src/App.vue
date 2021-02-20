@@ -41,6 +41,7 @@ export default {
   }),
   watch: {
     $route: function () {
+      console.log('App - watch - $route')
       if (this.$route.matched[0].path.split('/')[1] === ':catchAll(.*)') {
         this.selectedNav = 'none'
       } else if (this.$route.matched.length > 1) {
@@ -48,19 +49,19 @@ export default {
       } else {
         this.selectedNav = this.$route.matched[0].path.split('/')[1]
       }
-      console.error(this.$route)
-      console.error(this.selectedNav)
     }
   },
-  mounted () {},
+  mounted: function () {
+    console.log('App -> mounted')
+  },
   methods: {
     MusicPlayEnd: function () {
-      console.log('App - methods - MusicPlayEnd')
+      console.log('App -> methods -> MusicPlayEnd')
       // 停止播放 - 提交无
       this.$store.dispatch('CommitEndPlayMusic')
     },
     MusicTimeUpdate: function () {
-      // console.log('App - methods - MusicTimeUpdate')
+      console.log('App - methods - MusicTimeUpdate')
       const audio = document.getElementById('music-audio')
       this.$store.dispatch('CommitUpdatePlayingMusicTime', { duration: audio.duration, currentTime: audio.currentTime })
     }

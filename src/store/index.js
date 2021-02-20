@@ -27,6 +27,11 @@ const store = createStore({
       getVue: '/studyVue',
       getElectron: '/studyElectron',
       getNodeJS: '/studyNodeJS'
+    },
+    dashboard: {
+      homeAssistant: 'http://172.16.1.245:8123',
+      baidu: 'https://www.baidu.com',
+      google: 'https://www.sohu.com'
     }
   },
   getters: {

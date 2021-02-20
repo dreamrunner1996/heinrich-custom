@@ -46,6 +46,7 @@ export default {
     iframeSrc: ''
   }),
   mounted: function () {
+    console.log('Views -> Study.StudyCss -> mounted')
     this.GetStudyCss()
   },
   methods: {
@@ -63,7 +64,6 @@ export default {
     // 点击来自网站
     ClickStudyCssUrl: function (url) {
       console.log('Views -> Study.StudyCss -> methods -> ClickStudyCssUrl')
-      console.error(url)
       this.iframeSrc = url
       this.$nextTick(() => {
         this.IframeShow = true

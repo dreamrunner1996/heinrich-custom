@@ -109,6 +109,7 @@ export default {
     }
   }),
   mounted () {
+    console.log('Components -> MainPage.PhotoWall -> mounted')
     this.GetPhotoWallList()
   },
   methods: {
@@ -178,7 +179,6 @@ export default {
     // 点击 照片内容
     ClickPhoto: async function (photoItem) {
       console.log('Components -> MainPage.PhotoWall -> methods -> ClickPhoto')
-      console.log(this.$store.getters.photoInformationUrl)
       this.imgShow = photoItem
       await Axios.get(this.$store.getters.photoInformationUrl).then(res => {
         const resData = JSON.parse(JSON.stringify(res.data))
@@ -193,14 +193,11 @@ export default {
         }
         if (!existImgStatus) this.imgShow = { ...this.imgShow }
       })
-      console.warn(photoItem)
     },
     // 照片墙列表刷新 - 动画
     FlashPhotoWallList: function () {
       console.log('Components -> MainPage.PhotoWall -> methods -> FlashPhotoWallList')
-      this.styleList.flash = {
-        animation: 'xs-flash 1s linear'
-      }
+      this.styleList.flash = { animation: 'xs-flash 1s linear' }
       this.GetPhotoWallList()
       window.setTimeout(() => {
         this.styleList.flash = {}
@@ -212,7 +209,6 @@ export default {
       this.imgList = []
       await Axios.get(this.$store.getters.photoListUrl).then(res => {
         const photoListArray = JSON.parse(JSON.stringify(res.data))
-        console.log(photoListArray)
         if (photoListArray && photoListArray instanceof Array && photoListArray.length) {
           photoListArray.forEach((photoRes, photoIndex) => {
             const documentStr = photoRes.path.split('/')[2]
@@ -285,7 +281,6 @@ export default {
     // 点击查看大图
     ShowBigPhoto: function (photoItem) {
       console.log('Components -> MainPage.PhotoWall -> methods -> ShowBigPhoto')
-      console.error(photoItem)
       if (photoItem.url) {
         this.bigPhoto.url = photoItem.url
         this.bigPhoto.show = true

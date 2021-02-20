@@ -15,10 +15,12 @@ import Breadcrumb from 'ant-design-vue/lib/breadcrumb'
 import 'ant-design-vue/lib/breadcrumb/style/index.css'
 import './nav-breadcrumb.css'
 import {
+  BookOutlined,
   UserOutlined,
   FrownOutlined,
   HighlightOutlined,
   Html5Outlined,
+  HomeOutlined,
   ReadOutlined,
   WindowsOutlined,
   CodepenOutlined,
@@ -33,10 +35,12 @@ export default {
   components: {
     Breadcrumb,
     BreadcrumbItem,
+    BookOutlined,
     UserOutlined,
     FrownOutlined,
     HighlightOutlined,
     Html5Outlined,
+    HomeOutlined,
     ReadOutlined,
     WindowsOutlined,
     CodepenOutlined,
@@ -52,6 +56,7 @@ export default {
   }),
   watch: {
     routeNav: function (newVal) {
+      console.log('components -> NavBreadcrumb -> watch -> routeNav')
       this.showNav = []
       this.navContent.routeNav.forEach(res => {
         if (res.children) {
@@ -65,11 +70,9 @@ export default {
           if (res.key === newVal) this.showNav.push({ ...res, url: `/#/${res.key}` })
         }
       })
-      console.log(newVal)
       this.showNav = JSON.parse(JSON.stringify(this.showNav))
     }
-  },
-  methods: {}
+  }
 }
 </script>
 

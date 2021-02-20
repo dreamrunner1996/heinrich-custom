@@ -46,10 +46,12 @@ export default {
     iframeSrc: ''
   }),
   mounted: function () {
+    console.log('Views -> Study.StudyHtml -> mounted')
     this.GetStudyHtml()
   },
   methods: {
     GetStudyHtml: async function () {
+      console.log('Views -> Study.StudyHtml -> methods -> GetStudyHtml')
       this.studyHtmlList = []
       await Axios.get(this.$store.getters.getHtmlUrl).then(res => {
         const resData = res.data

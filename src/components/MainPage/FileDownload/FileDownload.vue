@@ -52,11 +52,12 @@ export default {
     fileList: []
   }),
   mounted () {
+    console.log('Components -> MainPage.FileDownload -> mounted')
     this.GetFileList()
   },
   methods: {
     FlashFileList: function () {
-      console.log('components -> MainPage.FileDownload -> methods -> FlashFileList')
+      console.log('Components -> MainPage.FileDownload -> methods -> FlashFileList')
       this.styleList.flash = {
         animation: 'xs-flash 1s linear'
       }
@@ -66,6 +67,7 @@ export default {
       }, 1000)
     },
     GetFileList: function () {
+      console.log('Components -> MainPage.FileDownload -> methods -> GetFileList')
       this.fileList = []
       Axios.get(this.$store.getters.fileListUrl).then(res => {
         const fileListArr = JSON.parse(JSON.stringify(res.data))
@@ -93,6 +95,7 @@ export default {
       })
     },
     DownLoadFile: function (item) {
+      console.log('Components -> MainPage.FileDownload -> methods -> DownLoadFile')
       const str = `?name=${item.name}&url=${item.url}`
       Axios.get(this.$store.getters.downloadUrl + str, {
         responseType: 'blob'
@@ -101,21 +104,6 @@ export default {
           type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8'
         })
         saveAs(blob, item.name)
-        // console.log(blob)
-        // // FileReader 主要用于将文件内容读入内存
-        // const reader = new FileReader()
-        // reader.readAsDataURL(blob)
-        // // onload 当读取操作成功完成时调用
-        // reader.onload = function (e) {
-        //   const a = document.createElement('a')
-        //   a.href = 'http://www.baidu.com'
-        //   // a.href = e.target.result
-        //   a.download = item.name
-        //   document.body.appendChild(a)
-        //   a.setAttribute('target', '_blank')
-        //   a.click()
-        //   document.body.removeChild(a)
-        // }
       })
     }
   }

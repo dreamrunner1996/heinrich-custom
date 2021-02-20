@@ -64,9 +64,11 @@ import MenuItem from 'ant-design-vue/lib/menu/MenuItem'
 import SubMenu from 'ant-design-vue/lib/menu/SubMenu'
 import 'ant-design-vue/lib/menu/style/index.css'
 import {
+  BookOutlined,
   UserOutlined,
   FrownOutlined,
   HighlightOutlined,
+  HomeOutlined,
   Html5Outlined,
   ReadOutlined,
   WindowsOutlined,
@@ -85,9 +87,11 @@ export default {
     Menu,
     MenuItem,
     SubMenu,
+    BookOutlined,
     UserOutlined,
     FrownOutlined,
     HighlightOutlined,
+    HomeOutlined,
     Html5Outlined,
     ReadOutlined,
     WindowsOutlined,
@@ -105,30 +109,40 @@ export default {
     selectedNav: []
   }),
   mounted () {
-    console.warn(this.navList)
+    console.log('components -> Nav -> mounted')
   },
   watch: {
-    routeNav: function (newVal, oldVal) {
-      console.error(newVal)
+    routeNav: function (newVal) {
+      console.log('components -> Nav -> watch -> routeNav')
       this.selectedNav = [newVal]
-      console.warn(this.selectedNav)
     }
   },
   methods: {
-    // ChangeIcon: function () {},
     NavSelect: function (nav) {
+      console.log('components -> Nav -> methods -> NavSelect')
       // this.$router.push({ path: nav.key })
       this.navList.forEach(navRes => {
-        console.log(nav.key)
         if (navRes.children) {
           navRes.children.forEach(navChRes => {
-            console.log(`${navRes.key}/${navChRes.key}`)
-            if (navChRes.key === nav.key) this.$router.push({ name: `${navChRes.key}` })
+            if (navChRes.key === nav.key) {
+              if (navRes.key === 'dashboard') this.$router.push({ name: 'dashboard', params: { dashboardUrl: this.DashboardKeyUrl(nav.key) } })
+              else this.$router.push({ name: `${navChRes.key}` })
+            }
           })
         } else {
           if (navRes.key === nav.key) this.$router.push({ name: `${navRes.key}` })
         }
       })
+    },
+    // dashboard 显示看板 根据key获取 显示url
+    DashboardKeyUrl: function (dashboardKey) {
+      console.log('components -> Nav -> methods -> DashboardKeyUrl')
+      switch (dashboardKey) {
+        case 'dashboard-homeAssistant': return this.$store.state.dashboard.homeAssistant
+        case 'dashboard-baidu': return this.$store.state.dashboard.baidu
+        case 'dashboard-google': return this.$store.state.dashboard.google
+        default: return '/'
+      }
     }
   }
 }

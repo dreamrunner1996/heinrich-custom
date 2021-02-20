@@ -46,6 +46,7 @@ export default {
     iframeSrc: ''
   }),
   mounted: function () {
+    console.log('Views -> Study.StudyNodeJS -> mounted')
     this.GetStudyNodeJS()
   },
   methods: {

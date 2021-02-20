@@ -52,9 +52,7 @@ export default {
   },
   data: () => ({
     poVisible: false
-  }),
-  watch: {},
-  methods: {}
+  })
 }
 </script>
 

@@ -31,7 +31,20 @@ export default {
     }
   }),
   methods: {
-    FlashLifeDiary: function () {}
+    FlashLifeDiary: function () {
+      console.log('components -> MainPage.LifeDiary -> methods -> FlashLifeDiary')
+      this.styleList.flash = {
+        animation: 'xs-flash 1s linear'
+      }
+      this.GetLifeDiary()
+      window.setTimeout(() => {
+        this.styleList.flash = {}
+      }, 1000)
+    },
+    // 获取收藏中心列表
+    GetLifeDiary: async function () {
+      console.log('Components -> MainPage.LifeDiary -> methods -> GetLifeDiary')
+    }
   }
 }
 </script>

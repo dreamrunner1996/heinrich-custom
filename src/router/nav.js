@@ -63,6 +63,28 @@ const routeNav = [
         icon: 'AccountBookOutlined'
       }
     ]
+  },
+  {
+    key: 'dashboard',
+    title: 'Dashboard',
+    icon: 'ReadOutlined',
+    children: [
+      {
+        key: 'dashboard-homeAssistant',
+        title: 'HomeAssistant',
+        icon: 'HomeOutlined'
+      },
+      {
+        key: 'dashboard-baidu',
+        title: 'Baidu',
+        icon: 'HomeOutlined'
+      },
+      {
+        key: 'dashboard-google',
+        title: 'Google',
+        icon: 'HomeOutlined'
+      }
+    ]
   }
 ]
 

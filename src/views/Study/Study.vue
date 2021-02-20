@@ -16,7 +16,9 @@ import './study.css'
 export default {
   name: 'Study',
   components: { LifeCalendar },
-  mounted () {},
+  mounted: function () {
+    console.log('Views -> Study -> mounted')
+  },
   methods: {}
 }
 </script>

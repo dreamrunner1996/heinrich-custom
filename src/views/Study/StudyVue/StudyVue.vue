@@ -46,10 +46,12 @@ export default {
     iframeSrc: ''
   }),
   mounted: function () {
+    console.log('Views -> Study.StudyVue -> mounted')
     this.GetStudyVue()
   },
   methods: {
     GetStudyVue: async function () {
+      console.log('Views -> Study.StudyVue -> methods -> GetStudyVue')
       this.studyVueList = []
       await Axios.get(this.$store.getters.getVueUrl).then(res => {
         const resData = res.data
