@@ -12,6 +12,7 @@ module.exports = {
   publicPath: './',
   devServer: {
     port: 81,
-    disableHostCheck: true
+    disableHostCheck: true,
+    proxy: 'http://heinrich-lsf:82'
   }
 }

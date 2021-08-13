@@ -40,26 +40,3 @@
 .node-js-item-content .node-js-item-url span {
     cursor: pointer;
 }
-
-.url-iframe-content {
-    z-index: 100;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, .6);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.url-iframe-content .iframe-context {
-    width: 1366px;
-    height: 768px;
-}
-.url-iframe-content .iframe-context iframe {
-    width: 1366px;
-    height: 768px;
-    background-color: white;
-}

@@ -76,7 +76,7 @@ import {
   UngroupOutlined,
   AccountBookOutlined
 } from '@ant-design/icons-vue'
-import navContent from '@/router/nav'
+import navContent from './../../router/nav'
 
 import './nav.css'
 const logoImg = require('./../../assets/header.jpg')

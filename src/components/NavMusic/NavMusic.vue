@@ -21,7 +21,7 @@ import 'ant-design-vue/lib/button/style/index.css'
 import Popover from 'ant-design-vue/lib/popover'
 import 'ant-design-vue/lib/popover/style/index.css'
 import { CustomerServiceOutlined } from '@ant-design/icons-vue'
-import MusicPlay from '@/components/MainPage/MusicPlay/MusicPlay'
+import MusicPlay from './../../components/MainPage/MusicPlay/MusicPlay'
 import './nav-music.css'
 
 export default {

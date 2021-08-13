@@ -1,0 +1,42 @@
+.interview-content {}
+.interview-content .title {
+    text-align: left;
+    font-size: 30px;
+    color: #8a8a8a;
+}
+.interview-content .divider {
+    margin: 5px 0;
+    height: 1px;
+    background-color: #dadada;
+}
+.interview-content .context {
+    margin-top: 10px;
+}
+
+.interview-item-title {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.interview-item-description {
+    color: #6a6a6a;
+    font-style: italic;
+    font-weight: bold;
+}
+.interview-item-content {
+    display: flex;
+    flex-direction: column;
+}
+.interview-item-content .interview-item-ask {
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+}
+.interview-item-content .interview-item-url-content {
+    text-align: right;
+}
+.interview-item-content .interview-item-url-content .interview-item-url {
+    color: #1890ff;
+    font-weight: bold;
+    font-style: italic;
+    cursor: pointer;
+}

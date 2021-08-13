@@ -1,24 +1,27 @@
 <template>
   <div class="study-vue-content">
-    <div class="title">
-      <Html5Outlined /> Study-Vue Page
-    </div>
-    <div class="divider" />
+<!--    <div class="title">-->
+<!--      <Html5Outlined /> Study-Vue Page-->
+<!--    </div>-->
+<!--    <div class="divider" />-->
     <div class="context">
-      <Collapse v-model:activeKey="activeKey">
-        <CollapsePanel v-for="studyVueItem in studyVueList" :key="studyVueItem.key">
-          <template #header>
-            <div class="vue-item-title">{{ studyVueItem.title }}</div>
-            <div v-if="studyVueItem.description" class="vue-item-description">—— {{ studyVueItem.description }} ——</div>
-          </template>
-          <div class="vue-item-content">
-            <div class="vue-item-context">{{ studyVueItem.context }}</div>
-            <div v-if="studyVueItem.url" class="vue-item-url">
-              <span @click="ClickStudyVueUrl(studyVueItem.url)">来自: {{ studyVueItem.url }}</span>
+      <div class="study-vue-item" v-for="studyVueItem in studyVueList" :key="'study-vue-item' + studyVueItem.key">
+        <div class="study-vue-item-title">—— {{ studyVueItem.key }} ——</div>
+        <Collapse v-model:activeKey="activeKey">
+          <CollapsePanel v-for="studyVueChildrenItem in studyVueItem.children" :key="'study-vue-item-children-' + studyVueChildrenItem.key">
+            <template #header>
+              <div class="study-vue-item-children-title">{{ studyVueChildrenItem.title }}</div>
+              <div v-if="studyVueItem.description" class="study-vue-item-children-description">—— {{ studyVueChildrenItem.description }} ——</div>
+            </template>
+            <div class="study-vue-item-children-content">
+              <div class="study-vue-item-children-context">{{ studyVueChildrenItem.context }}</div>
+              <div v-if="studyVueChildrenItem.url" class="study-vue-item-children-url">
+                <span @click="ClickStudyVueUrl(studyVueChildrenItem.url)">来自: {{ studyVueChildrenItem.url }}</span>
+              </div>
             </div>
-          </div>
-        </CollapsePanel>
-      </Collapse>
+          </CollapsePanel>
+        </Collapse>
+      </div>
     </div>
   </div>
   <div class="url-iframe-content" v-if="IframeShow" @click="IframeShow = false">
@@ -31,17 +34,16 @@
 <script>
 import Collapse from 'ant-design-vue/lib/collapse/index'
 import 'ant-design-vue/lib/collapse/style/index.css'
-import { Html5Outlined } from '@ant-design/icons-vue'
 import './study-vue.css'
 import Axios from 'axios'
 const CollapsePanel = Collapse.Panel
 
 export default {
   name: 'StudyVue',
-  components: { Collapse, CollapsePanel, Html5Outlined },
+  components: { Collapse, CollapsePanel },
   data: () => ({
     activeKey: [],
-    studyVueList: [],
+    studyVueList: {},
     IframeShow: false,
     iframeSrc: ''
   }),
@@ -60,6 +62,7 @@ export default {
           this.activeKey.push(studyVueItem.key)
         })
       })
+      console.error(this.studyVueList)
     },
     // 点击来自网站
     ClickStudyVueUrl: function (url) {

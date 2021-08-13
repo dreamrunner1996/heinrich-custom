@@ -2,8 +2,8 @@ import { createStore } from 'vuex'
 
 const store = createStore({
   state: {
-    // url: 'http://172.16.1.245',
-    url: 'http://localhost',
+    url: 'http://Heinrich-LSF',
+    // url: 'http://localhost',
     port: '1144',
     fileList: '/fileList',
     download: '/download',
@@ -26,8 +26,10 @@ const store = createStore({
       getCss: '/studyCss',
       getVue: '/studyVue',
       getElectron: '/studyElectron',
-      getNodeJS: '/studyNodeJS'
+      getNodeJS: '/studyNodeJS',
+      getUIFrame: '/studyUIFrame'
     },
+    interview: '/interview',
     dashboard: {
       homeAssistant: 'http://172.16.1.245:8123',
       baidu: 'https://www.baidu.com',
@@ -47,7 +49,9 @@ const store = createStore({
     getCssUrl: state => `${state.url}:${state.port}${state.study.getCss}`,
     getVueUrl: state => `${state.url}:${state.port}${state.study.getVue}`,
     getElectronUrl: state => `${state.url}:${state.port}${state.study.getElectron}`,
-    getNodeJSUrl: state => `${state.url}:${state.port}${state.study.getNodeJS}`
+    getNodeJSUrl: state => `${state.url}:${state.port}${state.study.getNodeJS}`,
+    getUIFrameUrl: state => `${state.url}:${state.port}${state.study.getUIFrame}`,
+    getInterviewUrl: state => `${state.url}:${state.port}${state.interview}`
   },
   mutations: {
     // 更新 播放音乐状态

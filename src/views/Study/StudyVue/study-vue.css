@@ -11,55 +11,38 @@
     background-color: #dadada;
 }
 
-.study-vue-content .context {
-    margin-top: 10px;
+.study-vue-content .context {}
+.study-vue-content .context .study-vue-item {
+    margin-bottom: 10px;
+}
+.study-vue-content .context .study-vue-item .study-vue-item-title {
+    font-size: 30px;
+    text-align: left;
+    color: #9c9c9c;
 }
 
-.vue-item-title {
+.study-vue-item-children-title {
     font-size: 24px;
     color: #686868;
     line-height: 24px;
 }
-.vue-item-description {
+.study-vue-item-children-description {
     font-size: 16px;
     color: #8a8a8a;
     line-height: 16px;
     margin-top: 8px;
 }
-.vue-item-content .vue-item-context {
+.study-vue-item-children-content .study-vue-item-children-context {
     font-size: 18px;
     color: #6a6a6a;
     text-align: left;
 }
-.vue-item-content .vue-item-url {
+.study-vue-item-children-content .study-vue-item-children-url {
     font-style: oblique;
     text-decoration: underline;
     color: #1890FF;
     text-align: right;
 }
-.vue-item-content .vue-item-url span {
+.study-vue-item-children-content .study-vue-item-children-url span {
     cursor: pointer;
-}
-
-.url-iframe-content {
-    z-index: 100;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, .6);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.url-iframe-content .iframe-context {
-    width: 1366px;
-    height: 768px;
-}
-.url-iframe-content .iframe-context iframe {
-    width: 1366px;
-    height: 768px;
-    background-color: white;
 }

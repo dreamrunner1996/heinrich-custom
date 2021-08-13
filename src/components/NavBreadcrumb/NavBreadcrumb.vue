@@ -61,7 +61,10 @@ export default {
       this.navContent.routeNav.forEach(res => {
         if (res.children) {
           res.children.forEach(resCh => {
-            if (resCh.key === newVal) {
+            if (res.key === newVal) {
+              this.showNav = []
+              this.showNav.push({ ...res, url: `/#/${res.key}` })
+            } else if (resCh.key === newVal) {
               this.showNav.push({ ...res, url: `/#/${res.key}` })
               this.showNav.push({ ...resCh, url: `/#/${res.key}/${resCh.key}` })
             }
@@ -75,7 +78,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-
-</style>

@@ -30,7 +30,7 @@ import Nav from '@/components/Nav/Nav.vue'
 import NavBreadcrumb from '@/components/NavBreadcrumb/NavBreadcrumb.vue'
 import NavMusic from '@/components/NavMusic/NavMusic.vue'
 import NavUser from '@/components/NavUser/NavUser.vue'
-import './App.css'
+import './app.css'
 
 export default {
   components: { Nav, NavBreadcrumb, NavMusic, NavUser },
@@ -68,3 +68,7 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="scss">
+
+</style>
